@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\KnifeScript.cs" />
     <Compile Include="Assets\Scripts\LogRotation.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Dell/Desktop/IT/Unity/Watermelon/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
