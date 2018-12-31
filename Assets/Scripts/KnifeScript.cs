@@ -31,6 +31,8 @@ public class KnifeScript : MonoBehaviour
             //once the knife isn't stationary, we can apply gravity (it will not automatically fall down)
             rb.gravityScale = 1;
             //TODO: Decrement number of available knives
+            //Decrement number of available knives (fix)
+            GameController.Instance.GameUI.DecrementDisplayedKnifeCount();
         }
     }
 
@@ -46,6 +48,10 @@ public class KnifeScript : MonoBehaviour
         //collision with a log
         if (collision.collider.tag == "Log")
         {
+            //play the particle effect on collision,
+            //you don't always have to store the component in a field... (fix)
+            GetComponent<ParticleSystem>().Play();
+
             //stop the knife
             rb.velocity = new Vector2(0, 0);
             //this will automatically inherit rotation of the new parent (log)
@@ -56,14 +62,17 @@ public class KnifeScript : MonoBehaviour
             knifeCollider.offset = new Vector2(knifeCollider.offset.x, -0.4f);
             knifeCollider.size = new Vector2(knifeCollider.size.x, 1.2f);
 
-            //TODO: Spawn another knife
+            //Spawn another knife (fix)
+            GameController.Instance.OnSuccessfulKnifeHit();
         }
         //collision with another knife
         else if (collision.collider.tag == "Knife")
         {
             //start rapidly moving downwards
             rb.velocity = new Vector2(rb.velocity.x, -2);
-            //TODO: Game Over
+
+            //Game Over (fix)
+            GameController.Instance.StartGameOverSequence(false);
         }
     }
 }
