@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 //this script cannot function properly without GameUI
 //let Unity know about it with this attribute
 [RequireComponent(typeof(GameUI))]
 public class GameController : MonoBehaviour
 {
+    public Slider sliderProgress;
+
 
     //we can get this instance from other scripts very easily
     public static GameController Instance { get; private set; }
@@ -58,6 +61,15 @@ public class GameController : MonoBehaviour
     {
         knifeCount--;
         Instantiate(knifeObject, knifeSpawnPosition, Quaternion.identity);
+        if(knifeCount == 7)
+        {
+            
+        }
+        else
+        {
+            sliderProgress.value++;
+        }
+
     }
 
     //the public method for starting game over
