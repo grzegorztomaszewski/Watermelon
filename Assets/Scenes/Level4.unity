@@ -1098,10 +1098,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1693474062}
   m_HandleRect: {fileID: 976596453}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 8
+  m_MinValue: 24
+  m_MaxValue: 32
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 24
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderProgress: {fileID: 1186840678}
   pointsText: {fileID: 116018389}
-  points: 0
+  points: 24
   knifeCount: 8
   knifeSpawnPosition: {x: 0, y: -3.5}
   knifeObject: {fileID: 6548954037415465582, guid: 99f4385bf3c71c64889cf146eecff6a8,

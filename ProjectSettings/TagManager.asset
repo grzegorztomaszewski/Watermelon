@@ -7,6 +7,7 @@ TagManager:
   - Log
   - Knife
   - Points
+  - Pause
   layers:
   - Default
   - TransparentFX

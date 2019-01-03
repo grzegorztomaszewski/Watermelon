@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public Text pointsText;
     public int points;
 
+
     //we can get this instance from other scripts very easily
     public static GameController Instance { get; private set; }
 
@@ -32,7 +33,6 @@ public class GameController : MonoBehaviour
     {
         //simple kind of a singleton instance (we're only in 1 scene)
         Instance = this;
-
         GameUI = GetComponent<GameUI>();
     }
 
@@ -43,23 +43,22 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+
         pointsText.text = "Points: " + points;
         //update the UI as soon as the game starts
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
         //also spawn the first knife
         SpawnKnife();
-
+        
     }
 
     //this will be called from KnifeScript
     public void OnSuccessfulKnifeHit()
     {
-
         points++;
-
         pointsText.text = "Points: " + points;
-
         sliderProgress.value++;
+
         if (knifeCount > 0)
         {
             SpawnKnife();
@@ -68,24 +67,59 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene("Level2");
 
-            // StartGameOverSequence(true);
         }
         else if (points == 16)
         {
             SceneManager.LoadScene("Level3");
-            // StartGameOverSequence(true);
         }
-        //else if (points == 24)
-        //{
-        //    SceneManager.LoadScene("Level4");
-        //    // StartGameOverSequence(true);
-        //}
+        else if (points == 24)
+        {
+            SceneManager.LoadScene("Level4");
+        }
+        else if (points == 32)
+        {
+            SceneManager.LoadScene("Level5");
+        }
+        else if (points == 40)
+        {
+            SceneManager.LoadScene("Level6");
+        }
+        else if (points == 48)
+        {
+            SceneManager.LoadScene("Level7");
+        }
+        else if (points == 56)
+        {
+            SceneManager.LoadScene("Level8");
+        }
+        else if (points == 64)
+        {
+            SceneManager.LoadScene("Level9");
+        }
+        else if (points == 72)
+        {
+            SceneManager.LoadScene("Level10");
+        }
+        else if (points == 80)
+        {
+            SceneManager.LoadScene("Level11");
+        }
+        else if (points == 88)
+        {
+            SceneManager.LoadScene("Level12");
+        }
+        else if (points == 96)
+        {
+            SceneManager.LoadScene("Level13");
+        }
+        else if (points == 104)
+        {
+            RestartGame();
+        }
     }
 
-    //a pretty self-explanatory method
     private void SpawnKnife()
     {
-
         knifeCount--;
         Instantiate(knifeObject, knifeSpawnPosition, Quaternion.identity);
     }
@@ -97,15 +131,11 @@ public class GameController : MonoBehaviour
         StartCoroutine("GameOverSequenceCoroutine", win);
     }
 
-    //this is a coroutine because we want to wait for a while when the player wins
     private IEnumerator GameOverSequenceCoroutine(bool win)
     {
         if (win)
         {
-
             yield return new WaitForSecondsRealtime(0.1f);
-
-
         }
         else
         {
@@ -115,13 +145,16 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
-        //restart the scene by reloading the currently active scene
-
-        //SceneManager.LoadScene(SceneManager.GetActiveScene()., LoadSceneMode.Single);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        SceneManager.LoadScene("basic");
     }
+    //public void PauseGame(bool On)
+    //{
+    //    if (On)
+    //    {
+    //        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+    //       // KnifeScript.instance.isActive = false;
+    //    }
+    //}
 
-
-
-    
 }
