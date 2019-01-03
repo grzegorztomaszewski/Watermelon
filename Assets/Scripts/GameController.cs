@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-       
+        pointsText.text = "Points: " + points;
         //update the UI as soon as the game starts
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
         //also spawn the first knife
@@ -52,6 +52,8 @@ public class GameController : MonoBehaviour
     {
 
         points++;
+        pointsText.text = "Points: " + points;
+        sliderProgress.value++;
         if (knifeCount > 0)
         {
             SpawnKnife();
@@ -65,18 +67,9 @@ public class GameController : MonoBehaviour
     //a pretty self-explanatory method
     private void SpawnKnife()
     {
-        pointsText.text = "Points: " + points;
+       
         knifeCount--;
         Instantiate(knifeObject, knifeSpawnPosition, Quaternion.identity);
-        if(knifeCount == 7)
-        {
-            
-        }
-        else
-        {
-            sliderProgress.value++;
-        }
-
     }
 
     //the public method for starting game over
@@ -96,7 +89,7 @@ public class GameController : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.1f);
             //Feel free to set different values for knife count and log's rotation pattern
             //instead of just restarting. This would make it feel like a new, harder level.
-            RestartGame();
+            
         }
         else
         {
