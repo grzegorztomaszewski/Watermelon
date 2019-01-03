@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public Slider sliderProgress;
+    public Text pointsText;
+    public int points;
 
 
     //we can get this instance from other scripts very easily
@@ -37,15 +39,19 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+       
         //update the UI as soon as the game starts
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
         //also spawn the first knife
         SpawnKnife();
+        
     }
-
+   
     //this will be called from KnifeScript
     public void OnSuccessfulKnifeHit()
     {
+
+        points++;
         if (knifeCount > 0)
         {
             SpawnKnife();
@@ -59,6 +65,7 @@ public class GameController : MonoBehaviour
     //a pretty self-explanatory method
     private void SpawnKnife()
     {
+        pointsText.text = "Points: " + points;
         knifeCount--;
         Instantiate(knifeObject, knifeSpawnPosition, Quaternion.identity);
         if(knifeCount == 7)
@@ -86,7 +93,7 @@ public class GameController : MonoBehaviour
             //make the player realize it's game over and he won
             //you can also add a nice animation of the breaking log
             //but this is outside the scope of this tutorial
-            yield return new WaitForSecondsRealtime(0.3f);
+            yield return new WaitForSecondsRealtime(0.1f);
             //Feel free to set different values for knife count and log's rotation pattern
             //instead of just restarting. This would make it feel like a new, harder level.
             RestartGame();
@@ -100,6 +107,13 @@ public class GameController : MonoBehaviour
     public void RestartGame()
     {
         //restart the scene by reloading the currently active scene
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+    }
+
 }

@@ -37,4 +37,5 @@ public class GameUI : MonoBehaviour
         panelKnives.transform.GetChild(knifeIconIndexToChange++)
             .GetComponent<Image>().color = usedKnifeIconColor;
     }
+
 }

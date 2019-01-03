@@ -2,7 +2,6 @@
 
 public class KnifeScript : MonoBehaviour
 {
-
     [SerializeField]
     private Vector2 throwForce;
 
@@ -48,6 +47,7 @@ public class KnifeScript : MonoBehaviour
         //collision with a log
         if (collision.collider.tag == "Log")
         {
+            
             //play the particle effect on collision,
             //you don't always have to store the component in a field... (fix)
             GetComponent<ParticleSystem>().Play();
