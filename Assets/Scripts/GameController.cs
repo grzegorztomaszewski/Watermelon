@@ -82,13 +82,8 @@ public class GameController : MonoBehaviour
     private IEnumerator GameOverSequenceCoroutine(bool win)
     {
         if (win)
-        {
-            //make the player realize it's game over and he won
-            //you can also add a nice animation of the breaking log
-            //but this is outside the scope of this tutorial
+        {      
             yield return new WaitForSecondsRealtime(0.1f);
-            //Feel free to set different values for knife count and log's rotation pattern
-            //instead of just restarting. This would make it feel like a new, harder level.
             
         }
         else
@@ -107,6 +102,7 @@ public class GameController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        
     }
 
 }

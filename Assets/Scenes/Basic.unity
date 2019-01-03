@@ -182,7 +182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Points: '
+  m_Text: 
 --- !u!222 &116018390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 80d275c5003d9a8459371a70c496a4f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbbda44e481968a47a0307e1d1a2fcad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
