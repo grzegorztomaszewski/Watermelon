@@ -22,6 +22,7 @@ public class GameUI : MonoBehaviour
         restartButton.SetActive(true);
     }
 
+
     //add a number of iconKnife children to panelKnives
     public void SetInitialDisplayedKnifeCount(int count)
     {

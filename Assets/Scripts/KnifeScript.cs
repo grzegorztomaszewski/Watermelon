@@ -7,15 +7,18 @@ public class KnifeScript : MonoBehaviour
 
     //knife shouldn't be controlled by the player when it's inactive 
     //(i.e. it already hit the log / another knife)
-    private bool isActive = true;
+    public bool isActive = true;
 
     //for controlling physics
     private Rigidbody2D rb;
     //the collider attached to Knife
     private BoxCollider2D knifeCollider;
 
+    public static KnifeScript instance;
+
     private void Awake()
     {
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
         knifeCollider = GetComponent<BoxCollider2D>();
     }

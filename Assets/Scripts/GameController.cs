@@ -12,7 +12,6 @@ public class GameController : MonoBehaviour
     public Text pointsText;
     public int points;
 
-
     //we can get this instance from other scripts very easily
     public static GameController Instance { get; private set; }
 
@@ -37,6 +36,11 @@ public class GameController : MonoBehaviour
         GameUI = GetComponent<GameUI>();
     }
 
+    void Update()
+    {
+
+    }
+
     private void Start()
     {
         pointsText.text = "Points: " + points;
@@ -44,30 +48,44 @@ public class GameController : MonoBehaviour
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
         //also spawn the first knife
         SpawnKnife();
-        
+
     }
-   
+
     //this will be called from KnifeScript
     public void OnSuccessfulKnifeHit()
     {
 
         points++;
+
         pointsText.text = "Points: " + points;
+
         sliderProgress.value++;
         if (knifeCount > 0)
         {
             SpawnKnife();
         }
-        else
+        else if (points == 8)
         {
-            StartGameOverSequence(true);
+            SceneManager.LoadScene("Level2");
+
+            // StartGameOverSequence(true);
         }
+        else if (points == 16)
+        {
+            SceneManager.LoadScene("Level3");
+            // StartGameOverSequence(true);
+        }
+        //else if (points == 24)
+        //{
+        //    SceneManager.LoadScene("Level4");
+        //    // StartGameOverSequence(true);
+        //}
     }
 
     //a pretty self-explanatory method
     private void SpawnKnife()
     {
-       
+
         knifeCount--;
         Instantiate(knifeObject, knifeSpawnPosition, Quaternion.identity);
     }
@@ -75,6 +93,7 @@ public class GameController : MonoBehaviour
     //the public method for starting game over
     public void StartGameOverSequence(bool win)
     {
+
         StartCoroutine("GameOverSequenceCoroutine", win);
     }
 
@@ -82,9 +101,11 @@ public class GameController : MonoBehaviour
     private IEnumerator GameOverSequenceCoroutine(bool win)
     {
         if (win)
-        {      
+        {
+
             yield return new WaitForSecondsRealtime(0.1f);
-            
+
+
         }
         else
         {
@@ -96,13 +117,11 @@ public class GameController : MonoBehaviour
     {
         //restart the scene by reloading the currently active scene
 
+        //SceneManager.LoadScene(SceneManager.GetActiveScene()., LoadSceneMode.Single);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
-    public void PauseGame()
-    {
-        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
-        
-    }
 
+
+    
 }
