@@ -1,0 +1,31 @@
+- Highscore
+- automatyczny generator poziomów ze zmiennym tłem
+- dodanie oringa jak przeszkody
+- dodanie powerupa, którym można zniszczyć/przebić sie przez przeszkodę. Powerupa dostaje się po przejsciu trzech lvl'i.
+- zmiana szaty graficznej
+- dodanie efektów dźwiękowych
+- dodanie listy najlepszych rekordów
+- dodanie waluty do gry, dzięki której, można zmienić kolor/wygląd pestki
+- dodanie informacji o obecnym stage'u
+- dostosowanie poziomu trudności:
+	- zwiększanie odległości punktu startowego pestki do arbuza
+	- na początku bez oringa z małą ilością pestek
+	- po x lvl'ach zwiększa się liczba pestek do wbicia + ilość klocków oringa + szybkość oringa + zmiana kierunku oringa
+- dodanie ustawień:
+	- pauzy
+	- przycisk wyjścia z gry + potwierdzenie (w tym czasie pauza gry)
+	- szybkie podsumowanie po zakończeniu rozgrywki (punkty, highscore, ile masz już waluty, przycisk restart+tabela wyników+sklepik z pestkami)
+	- dźwięku
+	- menu wyboru pestek
+	- tablica najlepszych wyników
+- dodać funkcję, dzięki której będzie możliwe zdobycie większej ilości punktów
+	- czym bliżej wbijemy nasze ostrze w stosunku do już wbitego ostrza, tym więcej punktów otrzymamy
+- dodanie animacji
+	- gałek ocznych arbuza
+	- ust arbuza
+	- rozpadania się arbuza po wbiciu wszystkich dostępnych pestek
+	- zniszczenie arbuza przy game over
+	
+DODANIE NOWEGO TRYBU:
+Tryb w którym to arbuz pluje pestkami w krążące wokół niego owoce
+Za utrudniający oring robią przybory kuchenne
