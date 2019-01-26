@@ -12,6 +12,9 @@ public class GameController : MonoBehaviour
     public Text pointsText;
     public int points;
 
+    [SerializeField]
+    public Camera cam;
+
 
     //we can get this instance from other scripts very easily
     public static GameController Instance { get; private set; }
@@ -65,8 +68,9 @@ public class GameController : MonoBehaviour
         }
         else if (points == 8)
         {
-            SceneManager.LoadScene("Level2");
-
+            SceneManager.LoadScene("Basic");
+            cam.backgroundColor = Color.green;
+            DontDestroyOnLoad(pointsText);
         }
         else if (points == 16)
         {

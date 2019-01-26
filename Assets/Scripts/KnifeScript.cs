@@ -16,6 +16,7 @@ public class KnifeScript : MonoBehaviour
 
     public static KnifeScript instance;
 
+
     private void Awake()
     {
         instance = this;
