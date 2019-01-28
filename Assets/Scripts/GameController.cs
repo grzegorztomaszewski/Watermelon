@@ -11,10 +11,10 @@ public class GameController : MonoBehaviour
     public Slider sliderProgress;
     public Text pointsText;
     public int points;
+    public int lvl_nr = 2;
 
     [SerializeField]
     public Camera cam;
-
 
     //we can get this instance from other scripts very easily
     public static GameController Instance { get; private set; }
@@ -26,10 +26,10 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Vector2 knifeSpawnPosition;
     [SerializeField]
-    //this will be a prefab of the knife. You will create the prefab later.
+
     private GameObject knifeObject;
 
-    //reference to the GameUI on GameController's game object
+
     public GameUI GameUI { get; private set; }
 
     private void Awake()
@@ -46,7 +46,6 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-
         pointsText.text = "Points: " + points;
         //update the UI as soon as the game starts
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
@@ -66,59 +65,10 @@ public class GameController : MonoBehaviour
         {
             SpawnKnife();
         }
-        else if (points == 8)
+        else
         {
-            SceneManager.LoadScene("Basic");
-            cam.backgroundColor = Color.green;
-            DontDestroyOnLoad(pointsText);
-        }
-        else if (points == 16)
-        {
-            SceneManager.LoadScene("Level3");
-        }
-        else if (points == 24)
-        {
-            SceneManager.LoadScene("Level4");
-        }
-        else if (points == 32)
-        {
-            SceneManager.LoadScene("Level5");
-        }
-        else if (points == 40)
-        {
-            SceneManager.LoadScene("Level6");
-        }
-        else if (points == 48)
-        {
-            SceneManager.LoadScene("Level7");
-        }
-        else if (points == 56)
-        {
-            SceneManager.LoadScene("Level8");
-        }
-        else if (points == 64)
-        {
-            SceneManager.LoadScene("Level9");
-        }
-        else if (points == 72)
-        {
-            SceneManager.LoadScene("Level10");
-        }
-        else if (points == 80)
-        {
-            SceneManager.LoadScene("Level11");
-        }
-        else if (points == 88)
-        {
-            SceneManager.LoadScene("Level12");
-        }
-        else if (points == 96)
-        {
-            SceneManager.LoadScene("Level13");
-        }
-        else if (points == 104)
-        {
-            RestartGame();
+            lvl_default();
+            lvl_nr++;
         }
     }
 
@@ -131,7 +81,6 @@ public class GameController : MonoBehaviour
     //the public method for starting game over
     public void StartGameOverSequence(bool win)
     {
-
         StartCoroutine("GameOverSequenceCoroutine", win);
     }
 
@@ -160,5 +109,14 @@ public class GameController : MonoBehaviour
     //       // KnifeScript.instance.isActive = false;
     //    }
     //}
-
+    public void lvl_default()
+    {
+        SceneManager.CreateScene($"lvl_{lvl_nr}");
+        SceneManager.GetActiveScene();
+        knifeCount = 8;
+        cam.backgroundColor = Color.green;
+        Destroy(knifeObject);
+        SpawnKnife();
+        //obiekty które się tworzą są w Log'u!! je trzeba usunąć
+    }
 }

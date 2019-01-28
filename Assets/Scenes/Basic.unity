@@ -209,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &193493911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   sliderProgress: {fileID: 1186840678}
   pointsText: {fileID: 116018389}
   points: 0
+  cam: {fileID: 519420031}
   knifeCount: 8
   knifeSpawnPosition: {x: 0, y: -3.5}
   knifeObject: {fileID: 6548954037415465582, guid: 99f4385bf3c71c64889cf146eecff6a8,
