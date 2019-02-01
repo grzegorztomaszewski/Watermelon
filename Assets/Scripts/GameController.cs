@@ -101,14 +101,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         SceneManager.LoadScene("basic");
     }
-    //public void PauseGame(bool On)
-    //{
-    //    if (On)
-    //    {
-    //        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
-    //       // KnifeScript.instance.isActive = false;
-    //    }
-    //}
+
     public void lvl_default()
     {
         SceneManager.CreateScene($"lvl_{lvl_nr}");
@@ -119,4 +112,13 @@ public class GameController : MonoBehaviour
         SpawnKnife();
         //obiekty które się tworzą są w Log'u!! je trzeba usunąć
     }
+
+    //public void PauseGame(bool On)
+    //{
+    //    if (On)
+    //    {
+    //        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+    //       // KnifeScript.instance.isActive = false;
+    //    }
+    //}
 }
