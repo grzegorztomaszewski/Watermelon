@@ -112,7 +112,7 @@ public class GameController : MonoBehaviour
         SpawnKnife();
         //obiekty które się tworzą są w Log'u!! je trzeba usunąć
     }
-
+    //naprawić przycisk pause
     //public void PauseGame(bool On)
     //{
     //    if (On)
