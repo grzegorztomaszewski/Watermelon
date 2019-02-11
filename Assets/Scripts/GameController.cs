@@ -32,6 +32,8 @@ public class GameController : MonoBehaviour
 
     public GameUI GameUI { get; private set; }
 
+    public LogRotation LogRotation { get; private set; }
+
     private void Awake()
     {
         //simple kind of a singleton instance (we're only in 1 scene)
