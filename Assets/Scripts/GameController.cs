@@ -11,7 +11,9 @@ public class GameController : MonoBehaviour
     public Slider sliderProgress;
     public Text pointsText;
     public int points;
-    public int lvl_nr = 2;
+    public int lvl_nr = 3;
+
+    public Scene lvl_2;
 
     [SerializeField]
     public Camera cam;
@@ -25,6 +27,7 @@ public class GameController : MonoBehaviour
     [Header("Knife Spawning")]
     [SerializeField]
     private Vector2 knifeSpawnPosition;
+     
     [SerializeField]
 
     private GameObject knifeObject;
@@ -53,7 +56,6 @@ public class GameController : MonoBehaviour
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
         //also spawn the first knife
         SpawnKnife();
-        
     }
 
     //this will be called from KnifeScript
@@ -69,6 +71,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            Destroy(knifeObject);
             lvl_default();
             lvl_nr++;
         }
@@ -79,6 +82,7 @@ public class GameController : MonoBehaviour
         knifeCount--;
         Instantiate(knifeObject, knifeSpawnPosition, Quaternion.identity);
     }
+
 
     //the public method for starting game over
     public void StartGameOverSequence(bool win)
@@ -106,14 +110,24 @@ public class GameController : MonoBehaviour
 
     public void lvl_default()
     {
-        SceneManager.CreateScene($"lvl_{lvl_nr}");
-        SceneManager.GetActiveScene();
-        knifeCount = 8;
-        cam.backgroundColor = Color.green;
-        Destroy(knifeObject);
-        SpawnKnife();
-        //obiekty które się tworzą są w Log'u!! je trzeba usunąć
+        if (points == 8)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            SceneManager.LoadScene("lvl_2");
+
+        }
+        else
+        {
+            SceneManager.CreateScene($"lvl_{lvl_nr}");
+            SceneManager.GetActiveScene();
+            knifeCount = 8;
+            cam.backgroundColor = Color.green;
+            Destroy(knifeObject);
+            SpawnKnife();
+        }
+            //obiekty które się tworzą są w Log'u!! je trzeba usunąć
     }
+
     //naprawić przycisk pause
     //public void PauseGame(bool On)
     //{
