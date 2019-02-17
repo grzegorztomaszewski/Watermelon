@@ -586,6 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43121c55a9defc3459002c219eb51975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logObject: {fileID: 1785162264}
+  logSpawnPosition: {x: 0, y: 1.2}
   rotationPattern:
   - Speed: 250
     Duration: 1
@@ -1093,6 +1095,8 @@ MonoBehaviour:
   pointsText: {fileID: 116018389}
   points: 0
   lvl_nr: 2
+  lvl_2:
+    m_Handle: 0
   cam: {fileID: 519420031}
   knifeCount: 8
   knifeSpawnPosition: {x: 0, y: -3.5}
@@ -1220,6 +1224,12 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1785162264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 750300883948677795, guid: f5efa6040825d3c4f9fcede3021f0c4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 750300884759526345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886898579
 GameObject:
   m_ObjectHideFlags: 0
