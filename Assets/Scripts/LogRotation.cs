@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class LogRotation : MonoBehaviour
 {
+    [Header("Log Spawn")]
+    [SerializeField]
+    public GameObject logObject;
+
+    [SerializeField]
+    private Vector2 logSpawnPosition;
 
     [System.Serializable] //this will allow us to edit it in the editor
     //a custom class representing a single rotation "element" of the log's rotation pattern
@@ -54,5 +60,10 @@ public class LogRotation : MonoBehaviour
             //infinite loop through the rotationPattern
             rotationIndex = rotationIndex < rotationPattern.Length ? rotationIndex : 0;
         }
+    }
+
+    public void SpawnLog()
+    {
+        Instantiate(logObject, logSpawnPosition, Quaternion.identity);
     }
 }
