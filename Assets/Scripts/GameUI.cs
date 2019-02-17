@@ -16,6 +16,7 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private Color usedKnifeIconColor;
 
+
     //enable the restartButton game object
     public void ShowRestartButton()
     {

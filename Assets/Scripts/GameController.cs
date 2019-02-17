@@ -13,6 +13,12 @@ public class GameController : MonoBehaviour
     public int points;
     public int lvl_nr = 3;
 
+    [Header("Log info")]
+    [SerializeField]
+    private GameObject logObject;
+    [SerializeField]
+    private int knifeInLogIndexToChange = 0;
+
     public Scene lvl_2;
 
     [SerializeField]
@@ -56,12 +62,12 @@ public class GameController : MonoBehaviour
         GameUI.SetInitialDisplayedKnifeCount(knifeCount);
         //also spawn the first knife
         SpawnKnife();
-        LogRotation.SpawnLog();
     }
 
     //this will be called from KnifeScript
     public void OnSuccessfulKnifeHit()
     {
+        knifeInLogIndexToChange ++;
         points++;
         pointsText.text = "Points: " + points;
         sliderProgress.value++;
@@ -72,9 +78,12 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Destroy(knifeObject);
+
+          //  knifeInLogIndexToChange = 0;
+           // logObject.transform.GetChild(knifeInLogIndexToChange++);
             lvl_default();
             lvl_nr++;
+            LogRotation.DestroyCloneKnife();
         }
     }
 

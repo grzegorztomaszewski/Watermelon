@@ -3,13 +3,6 @@ using UnityEngine;
 
 public class LogRotation : MonoBehaviour
 {
-    [Header("Log Spawn")]
-    [SerializeField]
-    public GameObject logObject;
-
-    [SerializeField]
-    private Vector2 logSpawnPosition;
-
     [System.Serializable] //this will allow us to edit it in the editor
     //a custom class representing a single rotation "element" of the log's rotation pattern
     private class RotationElement
@@ -62,8 +55,8 @@ public class LogRotation : MonoBehaviour
         }
     }
 
-    public void SpawnLog()
+    public void DestroyCloneKnife()
     {
-        Instantiate(logObject, logSpawnPosition, Quaternion.identity);
+        Destroy(transform.GetChild(8));
     }
 }
