@@ -3,12 +3,9 @@ using UnityEngine;
 
 public class LogRotation : MonoBehaviour
 {
-    [Header("Knife Spawning")]
-    [SerializeField]
-    public Vector2 logSpawnPosition;
 
     [SerializeField]
-    public GameObject logObject;
+    public GameObject log;
 
     [System.Serializable] //this will allow us to edit it in the editor
     //a custom class representing a single rotation "element" of the log's rotation pattern
@@ -62,8 +59,8 @@ public class LogRotation : MonoBehaviour
         }
     }
 
-    public void SpawnLog()
+    public void spawnLog()
     {
-            Instantiate(logObject, logSpawnPosition, Quaternion.identity);
+
     }
 }
