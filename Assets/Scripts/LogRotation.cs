@@ -4,9 +4,6 @@ using UnityEngine;
 public class LogRotation : MonoBehaviour
 {
 
-    [SerializeField]
-    public GameObject log;
-
     [System.Serializable] //this will allow us to edit it in the editor
     //a custom class representing a single rotation "element" of the log's rotation pattern
     private class RotationElement
@@ -57,10 +54,5 @@ public class LogRotation : MonoBehaviour
             //infinite loop through the rotationPattern
             rotationIndex = rotationIndex < rotationPattern.Length ? rotationIndex : 0;
         }
-    }
-
-    public void spawnLog()
-    {
-
     }
 }

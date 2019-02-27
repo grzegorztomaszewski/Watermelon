@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameUI.cs" />
      <Compile Include="Assets\Scripts\KnifeScript.cs" />
+     <Compile Include="Assets\Scripts\Log.cs" />
      <Compile Include="Assets\Scripts\LogRotation.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/arox2/Desktop/Projekty lokalne/Watermelon/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

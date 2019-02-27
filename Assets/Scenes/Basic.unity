@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 335476258}
   - component: {fileID: 335476257}
   - component: {fileID: 335476256}
+  - component: {fileID: 335476260}
   - component: {fileID: 335476259}
   m_Layer: 0
   m_Name: LogMotor
@@ -585,7 +586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43121c55a9defc3459002c219eb51975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: {fileID: 0}
   rotationPattern:
   - Speed: 250
     Duration: 1
@@ -601,6 +601,19 @@ MonoBehaviour:
     Duration: 2
   - Speed: 350
     Duration: 1.5
+--- !u!114 &335476260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335476255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f19dc8c2e7fb7645a316667bf7471b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  log: {fileID: 750300883948677795, guid: f5efa6040825d3c4f9fcede3021f0c4f, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
