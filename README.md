@@ -9,8 +9,10 @@ https://arox.itch.io/watermelon
 
 Screenshots:
 ## 1 Screenshot (second lvl)
-![Screenshot_20190720-184710_Watermelon](https://user-images.githubusercontent.com/41800726/61581496-3c914500-ab1f-11e9-99de-9e63c3ce2f1f.jpg)
-## 2 Screenshot (third lvl)
-![Screenshot_20190720-184730_Watermelon](https://user-images.githubusercontent.com/41800726/61581497-41ee8f80-ab1f-11e9-9d88-6740b6f09225.jpg)
-## 3 Screenshot (fourth lvl)
-![Screenshot_20190720-184753_Watermelon](https://user-images.githubusercontent.com/41800726/61581499-474bda00-ab1f-11e9-880b-27b99068c9a5.jpg)
+![Screenshot_20190721-194132_Watermelon](https://user-images.githubusercontent.com/41800726/61594774-f657e680-abef-11e9-8ef4-bc729c3452fb.jpg)
+## 2 Screenshot (fourth lvl)
+![Screenshot_20190721-194145_Watermelon](https://user-images.githubusercontent.com/41800726/61594781-04a60280-abf0-11e9-8a22-d04d90c7220e.jpg)
+## 3 Screenshot (seventh lvl)
+![Screenshot_20190721-191823_Watermelon](https://user-images.githubusercontent.com/41800726/61594787-0b347a00-abf0-11e9-921c-792ca9384227.jpg)
+## 4 Screenshot (PC Build)
+![sspc build](https://user-images.githubusercontent.com/41800726/61594764-e5a77080-abef-11e9-8601-f58c5f63f3ea.png)
