@@ -142,7 +142,7 @@ public class GameController : MonoBehaviour
         }
         else if (points == 160)
         {
-            SceneManager.LoadScene("basic");
+            GameUI.ShowWinButton();
         }
     }
 

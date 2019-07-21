@@ -7,6 +7,9 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private GameObject restartButton;
 
+    [SerializeField]
+    private GameObject winButton;
+
     [Header("Knife Count Display")] //header for organization purposes
     [SerializeField]
     private GameObject panelKnives;
@@ -20,6 +23,11 @@ public class GameUI : MonoBehaviour
     public void ShowRestartButton()
     {
         restartButton.SetActive(true);
+    }
+
+    public void ShowWinButton()
+    {
+        winButton.SetActive(true);
     }
 
 
