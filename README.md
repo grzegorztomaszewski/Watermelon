@@ -15,4 +15,4 @@ Screenshots:
 ## 3 Screenshot (seventh lvl)
 ![Screenshot_20190721-191823_Watermelon](https://user-images.githubusercontent.com/41800726/61594787-0b347a00-abf0-11e9-921c-792ca9384227.jpg)
 ## 4 Screenshot (PC Build)
-![sspc build](https://user-images.githubusercontent.com/41800726/61594764-e5a77080-abef-11e9-8601-f58c5f63f3ea.png)
+![sspc build](https://user-images.githubusercontent.com/41800726/61594837-79793c80-abf0-11e9-8bd0-0769baa0e7cd.png)
